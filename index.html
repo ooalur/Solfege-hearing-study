@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Стратегии слухового распознавания</title>
+  <meta name="description" content="Пилотный сайт-анкета для исследования стратегий слухового распознавания в сольфеджийных задачах." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Учебное исследование</p>
+        <h1>Стратегии слухового распознавания у музыкантов</h1>
+        <p class="lead">Сайт измеряет не только правильность ответов, но и время реакции, самооценку сложности и способы, которыми участник решает сольфеджийные задачи.</p>
+      </div>
+      <div class="hero-card" aria-live="polite">
+        <span id="modeBadge">Режим не выбран</span>
+        <strong id="progressText">Старт</strong>
+        <div class="progress" aria-hidden="true"><div id="progressBar"></div></div>
+      </div>
+    </header>
+
+    <main id="screen" class="panel" aria-live="polite"></main>
+
+    <footer class="site-footer">
+      <button id="backBtn" class="secondary hidden" type="button">← Назад</button>
+      <button id="nextBtn" type="button">Начать</button>
+    </footer>
+  </div>
+
+  <template id="consentTemplate">
+    <section class="screen-section">
+      <h2>Перед началом</h2>
+      <p>Это пилотная анкета для исследования слуховых стратегий. Здесь нет оценки «хороший / плохой слух»: важно понять, <b>как</b> люди слышат.</p>
+      <div class="notice">
+        <b>Данные отправляются автоматически в Google Sheets</b> после завершения анкеты, если исследователь настроил подключение. Также можно скачать резервную копию JSON/CSV. Данные собираются под анонимным кодом участника, без ФИО.
+      </div>
+      <label class="checkbox-line"><input id="consentCheck" type="checkbox" /> Я понимаю, что прохождение добровольное, и согласен(на) на сохранение моих ответов под анонимным кодом участника.</label>
+      <label class="checkbox-line"><input id="headphonesCheck" type="checkbox" /> Я в тихом месте и слышу звук в наушниках или колонках.</label>
+      <div class="actions"><button id="testSoundBtn" class="secondary" type="button">Проверить звук</button></div>
+    </section>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
